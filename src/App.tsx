@@ -1506,7 +1506,6 @@ export default function App() {
                         <th className="px-8 py-6 font-bold uppercase tracking-wider text-xs">User</th>
                         <th className="px-8 py-6 font-bold uppercase tracking-wider text-xs">Score</th>
                         <th className="px-8 py-6 font-bold uppercase tracking-wider text-xs">Date</th>
-                        <th className="px-8 py-6 font-bold uppercase tracking-wider text-xs text-center">Action</th>
                       </tr>
                     </thead>
                     <tbody className="divide-y divide-gray-100 dark:divide-zinc-800">
@@ -1553,18 +1552,6 @@ export default function App() {
                               </div>
                             </td>
                             <td className="px-8 py-6 text-sm text-gray-500 font-medium">{entry.date}</td>
-                            <td className="px-8 py-6 text-center">
-                              <button 
-                                onClick={() => {
-                                  const fullResult = allResults.find(r => r.userName === entry.userName && r.score === entry.score && r.totalQuestions === entry.questionCount);
-                                  if (fullResult) setSelectedResult(fullResult);
-                                }}
-                                className="p-2 rounded-lg bg-gray-100 dark:bg-zinc-800 text-gray-500 hover:bg-bd-green hover:text-white transition-all"
-                                title="View Details"
-                              >
-                                <ExternalLink size={18} />
-                              </button>
-                            </td>
                           </tr>
                         );
                       })}
